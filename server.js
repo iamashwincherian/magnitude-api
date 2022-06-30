@@ -3,6 +3,8 @@ const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
 
+const db = require("./src/db/connect");
+
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 
@@ -22,4 +24,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
     console.log(`Server started running on http://localhost:${PORT}`);
+    db.connect();
 });
