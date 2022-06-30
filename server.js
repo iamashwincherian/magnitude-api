@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
 
+const routes = require("./src/routes");
 const db = require("./src/db/connect");
 
 dotenv.config();
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 // Middlewares
 app.use(express.json());
 app.use(cors());
+app.use("/api", routes);
 
 // Error handling
 app.use((err, req, res, next) => {
