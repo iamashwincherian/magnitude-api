@@ -1,1 +1,1 @@
-** Magnitude Analytics Backend
+# Magnitude Analytics Backend
